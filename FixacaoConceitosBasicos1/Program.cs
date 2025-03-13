@@ -28,7 +28,7 @@ do
 
     if (opcaoSelecionada == 0)
     {
-        break;
+        break; 
     }
     if (opcaoSelecionada == 1)
     {
