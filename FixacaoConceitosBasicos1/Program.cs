@@ -20,31 +20,39 @@ int opcaoSelecionada;
 
 do
 {
-    Console.WriteLine("Escolha uma opcao:");
-    Console.WriteLine("[0] - Sair");
-    Console.WriteLine("[1] - Somar dois numeros");
-    Console.WriteLine("[2] - Converter metros para milimetros");
-    opcaoSelecionada = int.Parse(Console.ReadLine());
+    try
+    {
+        Console.WriteLine("Escolha uma opcao:");
+        Console.WriteLine("[0] - Sair");
+        Console.WriteLine("[1] - Somar dois numeros");
+        Console.WriteLine("[2] - Converter metros para milimetros");
+        opcaoSelecionada = int.Parse(Console.ReadLine());
 
-    if (opcaoSelecionada == 0)
-    {
-        break; 
+        if (opcaoSelecionada == 0)
+        {
+            break;
+        }
+        if (opcaoSelecionada == 1)
+        {
+            Console.Write("digite o primeiro numero: ");
+            int num1 = int.Parse(Console.ReadLine());
+            Console.Write("digite o segundo numero: ");
+            int num2 = int.Parse(Console.ReadLine());
+            Console.WriteLine($"a soma dos valores é {SomaDoisNumeros.Somar(num1, num2)}");
+        }
+        if (opcaoSelecionada == 2)
+        {
+            Console.Write("digite o valor para converter: ");
+            double num3 = double.Parse(Console.ReadLine());
+            Console.WriteLine($"o valor convertido é {MetrosMilmetros.Converter(num3)}");
+        }
     }
-    if (opcaoSelecionada == 1)
+    catch (Exception e)
     {
-        Console.Write("digite o primeiro numero: ");
-        int num1 = int.Parse(Console.ReadLine());
-        Console.Write("digite o segundo numero: ");
-        int num2 = int.Parse(Console.ReadLine());
-        Console.WriteLine($"a soma dos valores é {SomaDoisNumeros.Somar(num1, num2)}");
-    }
-    if (opcaoSelecionada == 2)
-    {
-        Console.Write("digite o valor para converter: ");
-        double num3 = double.Parse(Console.ReadLine());
-        Console.WriteLine($"o valor convertido é {MetrosMilmetros.Converter(num3)}");
+        break;
     }
    
+
 }
 while (opcaoSelecionada != 0);
 
